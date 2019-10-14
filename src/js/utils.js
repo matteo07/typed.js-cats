@@ -1,7 +1,6 @@
 export function htmlToElement(html) {
   let template = document.createElement('template');
-  html = html.trim();
-  template.innerHTML = html;
+  template.innerHTML = html.trim();
   return template.content.firstChild;
 }
 

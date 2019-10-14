@@ -11,14 +11,12 @@ const TYPING_PROPS = {
   typeSpeed: .1,
 };
 
-const showCats = !location.search.startsWith('?nocat');
-
 document.body.onload = () => {
-  let content = document.querySelector('#content');
+  const showCats = !location.search.startsWith('?nocat');
+
   let skillsTitle = document.querySelector('#skills');
   let contactSection = document.querySelector('#contact');
 
-  content.style.display = 'block';
   skillsTitle.style.display = 'none';
   contactSection.style.display = 'none';
 
@@ -46,15 +44,17 @@ document.body.onload = () => {
     new Typed("#contact > div", {
       ...TYPING_PROPS,
       strings: [contact],
-      onStringTyped: () => {
-        if(showCats) {
-          spawnBall('ball1',
-          () =>  spawnBall('ball2',
+      onStringTyped: spawnCats,
+    });
+  }
+
+  function spawnCats() {
+    if(showCats) {
+      spawnBall('ball1',
+        () =>  spawnBall('ball2',
           () =>  spawnBall('ball3',
             () =>  spawnBall('ball4',
               () =>spawnBall('ball5', () => { location.href = '?nocat'; })))))
-        }
-      }
-    });
+    }
   }
 };
