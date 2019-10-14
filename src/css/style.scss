@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono&display=swap');
+
+$base-color: #3f0ac4;
+$bg-color: #f8faf2;
+$accent-color: #f8faf2;
+$red: #6A041D;
+$green: #53FF45;
+
+html {
+  font-family: 'Ubuntu Mono', monospace;
+}
+
+body {
+  padding: 4em;
+  box-sizing: border-box;
+  min-height: 100vh;
+  background-color: $bg-color;
+  color: $base-color;
+}
+
+body, div {
+  box-sizing: border-box;
+}
+
+#content {
+  max-width: 62.5em;
+}
+
+.ball {
+  position: fixed;
+  width: 10em;
+  height: 10em;
+  border-radius: 5em;
+  //background-color: $green;
+  z-index: 21331;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  background: url('../img/face.png');
+  background-size: cover;
+}
+
+h1 {
+  font-size: 4em;
+  padding-bottom: .5em;
+  font-weight: bold;
+}
+
+#skills .spacer {
+  margin-top: 1em;
+}
+
+h2 {
+  font-size: 3em;
+  padding-bottom: 1em;
+  margin-left: .5rem;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 1.75em;
+  font-weight: bold;
+  padding-bottom: .5em;
+}
+
+a, a:visited {
+  color: $base-color;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+p {
+  font-size: 1.5em;
+}
+
+section {
+  padding: 1rem 0;
+
+  p {
+    padding-right: 2em;
+  }
+}
+
+@media screen and ( max-width: 37.5em ){
+  body {
+    padding: 2em;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  h2 {
+    font-size: 1.5em;
+    padding-bottom: .5em;
+  }
+
+  h3 {
+    padding-bottom: .25em;
+    font-size: 0.875em;
+  }
+
+  #skills .spacer {
+    margin-top: .5em;
+  }
+
+  p {
+    font-size: 0.75em;
+  }
+
+  #ball {
+    position: fixed;
+    width: 5em;
+    height: 5em;
+    border-radius: 2.5em;
+  }
+}
